@@ -3,7 +3,6 @@ import { Component, Input } from '@angular/core';
 @Component({
     selector: 'app-color-indicator',
     standalone: true,
-    // imports: [CommonModule],
     template: ` <div [style.backgroundColor]="color" class="w-2 h-2 rounded-full"></div> `,
 })
 export class ColorIndicatorComponent {
