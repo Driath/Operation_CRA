@@ -11,18 +11,24 @@ type MissionState = {
 const missions = [
     {
         id: 1,
+        name: 'Congés',
+        description: "Congés as Mission ? not a bug, that's a feature!", // :)
+        color: 'white',
+    },
+    {
+        id: 2,
         name: 'Steal Coca Cola recipe',
         description: 'The agent has to steal the Coca Cola recipe from the evil coca cola company.',
         color: 'red',
     },
     {
-        id: 2,
+        id: 3,
         name: 'Prevent the Apocalypse',
         description: 'Avoid nuclear conflict, 🦅',
         color: 'blue',
     },
     {
-        id: 3,
+        id: 4,
         name: 'Neutralise the traitor 008 agent',
         description: 'Unfortunately 008 agent was a traitor.',
         color: 'orange',

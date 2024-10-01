@@ -11,11 +11,11 @@ describe('MissionStore', () => {
 
     describe('setSelectedMission', () => {
         it('should set the selected mission when a valid id is provided', () => {
-            const missionId = 2;
+            const missionId = 3;
             store.setSelectedMission(missionId);
             expect(store.selectedMission()).toBeTruthy();
             expect(store.selectedMission()).toEqual({
-                id: 2,
+                id: 3,
                 name: 'Prevent the Apocalypse',
                 description: 'Avoid nuclear conflict, 🦅',
                 color: 'blue',
@@ -35,10 +35,11 @@ describe('MissionStore', () => {
             const colorsMap = store.getColorsId();
 
             expect(colorsMap instanceof Map).toBe(true);
-            expect(colorsMap.size).toBe(3);
-            expect(colorsMap.get(1)).toBe('red');
-            expect(colorsMap.get(2)).toBe('blue');
-            expect(colorsMap.get(3)).toBe('orange');
+            expect(colorsMap.size).toBe(4);
+            expect(colorsMap.get(1)).toBe('white');
+            expect(colorsMap.get(2)).toBe('red');
+            expect(colorsMap.get(3)).toBe('blue');
+            expect(colorsMap.get(4)).toBe('orange');
         });
     });
 });
