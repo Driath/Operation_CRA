@@ -1,0 +1,20 @@
+<p-card header="Agents">
+    <!-- @for (agent of agentStore.agents(); track agent) {
+        <div class="">
+            {{ agent.name }}
+            {{ agent.lastName }}
+        </div>
+    } -->
+    @if (!agentStore.selectedAgent()) {
+        <p>Veuillez selectionner un agent afin d'imputer :)</p>
+    }
+    <p-dropdown
+        [options]="agentStore.agents()"
+        optionLabel="name"
+        optionValue="id"
+        [ngModel]="agentStore.selectedAgent().id"
+        (ngModelChange)="agentStore.setSelectedAgent($event)"
+    />
+
+    <!-- {{ agentStore.selectedAgent() | json }} -->
+</p-card>
