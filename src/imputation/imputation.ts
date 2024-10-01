@@ -1,6 +1,3 @@
-import { Agent } from '../agent/agent';
-import { Mission } from '../mission/mission';
-
 export type Imputation = {
     id: number;
     date: Date;
