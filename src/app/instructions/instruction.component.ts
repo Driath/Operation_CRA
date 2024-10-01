@@ -9,7 +9,7 @@ import { CardModule } from 'primeng/card';
             <p>
                 Hello cher administra(teur/trice) de nos chers valeurs agents,<br />
                 Afin d'inputer, il faut selectionner un agent, une mission, et vous aurez la
-                possibilité de toggle
+                possibilité de toggle la mission selectionnée selon l'agent selectionné
             </p>
         </p-card>
     `,
