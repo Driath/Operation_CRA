@@ -13,17 +13,14 @@ const agents = [
     {
         id: 1,
         name: 'Jean-Phillippe Herbien',
-        color: 'violet',
     },
     {
         id: 2,
         name: 'Justin Ptitpeu',
-        color: 'red',
     },
     {
         id: 3,
         name: 'Sterling Archer',
-        color: 'green',
     },
 ];
 
@@ -43,6 +40,9 @@ export const AgentStore = signalStore(
     withMethods(store => ({
         setSelectedAgent(idNumber: number) {
             const selectedAgent = store.agents().find(agent => agent.id === idNumber);
+            if (!selectedAgent) {
+                throw new Error('[setSelectedAgent] could not retrieve agent');
+            }
             patchState(store, state => ({
                 ...state,
                 selectedAgent,
