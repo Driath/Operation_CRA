@@ -10,7 +10,7 @@ This app is splitted with foldername feature
 
 - `src/app/`: Angular application
 - `src/date/`: Date utilities
-- `src/imputation/`: Imputation components and his store management
+- `src/imputation/`: Imputation components and his state management
 - `src/agent/`: Agent components and his state management
 - `src/mission/`: Mission components and his state management
 
