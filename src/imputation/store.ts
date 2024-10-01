@@ -21,7 +21,6 @@ export const ImputationStore = signalStore(
     withState(() => inject(initialState)),
     withMethods((store, agentStore = inject(AgentStore), missionStore = inject(MissionStore)) => ({
         toggleImputation(dateAsDay: number, month: number, year: number) {
-            // const date = new Date().setDate(day.date).setFullYear(year);
             const date = new Date(year, month, dateAsDay);
 
             const hasImputation = store
