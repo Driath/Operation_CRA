@@ -1,0 +1,16 @@
+<div class="flex flex-col gap-2">
+    @if (missionStore.missions(); as missions) {
+        @if (missions.length > 0) {
+            @for (mission of missions; track mission.id) {
+                <div
+                    class="flex items-center gap-2"
+                    [pTooltip]="mission.description"
+                    [tooltipPosition]="'bottom'"
+                >
+                    <div [style.backgroundColor]="mission.color" class="w-2 h-2 rounded-full"></div>
+                    <h3>{{ mission.name }}</h3>
+                </div>
+            }
+        }
+    }
+</div>
