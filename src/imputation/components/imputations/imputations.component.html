@@ -1,0 +1,5 @@
+<div class="flex gap-4 flex-wrap">
+    @for (monthYear of calendarStore.monthsWithYear(); track monthYear.month) {
+        <app-imputation-month [monthNumber]="monthYear.month" [year]="monthYear.year" />
+    }
+</div>

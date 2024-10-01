@@ -1,0 +1,40 @@
+<p-card [header]="calendarStore.months()[monthNumber].label + ' ' + year">
+    <p-table [value]="weeks()">
+        <ng-template pTemplate="header">
+            <tr>
+                @for (day of daysOfWeek(); track day) {
+                    <th>{{ day.charAt(0).toUpperCase() }}</th>
+                }
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-week>
+            <tr>
+                <!-- 
+                    TODO: tracking with null will cause warning errors in console, find a way to fix it
+                 -->
+                @for (day of week; track day) {
+                    <td>
+                        @if (day) {
+                            <div
+                                class="cursor-pointer flex flex-1 flex-col justify-start items-center h-8 w-8"
+                                (click)="
+                                    imputationStore.toggleImputation(day.date, monthNumber, year)
+                                "
+                            >
+                                <!-- TODO: find a way to avoid many (click)s binding; maybe something like an unnique @HostBinding on month -->
+                                {{ day.date }}
+                                @if (day.missionsColors?.length > 0) {
+                                    <div class="flex">
+                                        @for (color of day.missionsColors; track color) {
+                                            <app-color-indicator [color]="color" />
+                                        }
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </td>
+                }
+            </tr>
+        </ng-template>
+    </p-table>
+</p-card>
