@@ -1,0 +1,15 @@
+<div class="flex gap-2 items-center justify-center">
+    <p-dropdown
+        [options]="calendarStore.limits.asYears()"
+        [ngModel]="calendarStore.date().getFullYear()"
+        (ngModelChange)="calendarStore.setYear($event)"
+        tabindex="4"
+    />
+    <p-dropdown
+        [options]="calendarStore.months()"
+        optionLabel="label"
+        optionValue="value"
+        [ngModel]="calendarStore.date().getMonth()"
+        (ngModelChange)="calendarStore.setMonth($event)"
+    />
+</div>
