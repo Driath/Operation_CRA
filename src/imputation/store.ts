@@ -3,6 +3,7 @@ import { Imputation } from './imputation';
 import { inject, InjectionToken } from '@angular/core';
 import { AgentStore } from '../agent/store';
 import { MissionStore } from '../mission/store';
+import { imputations } from './imputations.mock';
 
 const key = 'ImputationState';
 
@@ -12,7 +13,7 @@ type ImputationState = {
 
 const initialState = new InjectionToken<ImputationState>(key, {
     factory: () => ({
-        imputations: [],
+        imputations,
     }),
 });
 
