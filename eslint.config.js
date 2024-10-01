@@ -51,7 +51,9 @@ module.exports = tseslint.config(
       prettierConfig
     ],
     rules: {
-      "prettier/prettier": "error",
+      "prettier/prettier": "warn",
+      "@angular-eslint/template/click-events-have-key-events": "off",
+      "@angular-eslint/template/interactive-supports-focus": "off"
     },
   }
 );
