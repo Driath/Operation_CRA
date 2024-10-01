@@ -8,8 +8,6 @@ type CalendarState = {
     date: Date; // current date ref
     daysOfWeekRef: Date; // compute first day of the week ref
     limits: {
-        min: Date; // could be removed ?
-        max: Date; // could be removed ?
         asYears: number[];
     };
     monthRange: number;
@@ -54,8 +52,6 @@ const initialState: CalendarState = {
     date,
     daysOfWeekRef,
     limits: {
-        min,
-        max,
         asYears,
     },
     monthRange,
@@ -78,9 +74,6 @@ export const CalendarStore = signalStore(
     { providedIn: 'root' },
     withState(() => inject(calendarStateToken)),
     withComputed(store => ({
-        // year: computed(() => store.date().getFullYear()),
-        // month: computed(() => store.date().getMonth()),
-        // day: computed(() => store.date().getDate()),
         monthsWithYear: computed(() => {
             const currentMonth = store.date().getMonth();
             const currentYear = store.date().getFullYear();
@@ -92,9 +85,6 @@ export const CalendarStore = signalStore(
         }),
     })),
     withMethods(store => ({
-        setDate(date: Date) {
-            patchState(store, { date });
-        },
         setYear(year: number) {
             patchState(store, {
                 date: new Date(year, store.date().getMonth(), store.date().getDate()),

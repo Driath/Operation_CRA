@@ -1,6 +1,4 @@
-import { Agent } from '../../agent/agent';
 import { ImputationWithColor } from '../../imputation/imputation';
-import { Mission } from '../../mission/mission';
 
 export type DateDay = {
     date: number | null;
@@ -10,10 +8,6 @@ export type DateDay = {
 
 type Week = DateDay[];
 
-// type WeekWithImputation = Week & {
-//     mission?: Mission;
-//     agent?: Agent;
-// };
 /**
  * return weeks for a given month and year
  * [
