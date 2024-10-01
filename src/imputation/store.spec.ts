@@ -13,6 +13,7 @@ describe('ImputationStore', () => {
         store = TestBed.inject(ImputationStore);
         agentStore = TestBed.inject(AgentStore);
         missionStore = TestBed.inject(MissionStore);
+        store.reset();
     });
 
     describe('toggleImputation', () => {
