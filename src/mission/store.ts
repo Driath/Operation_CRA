@@ -52,8 +52,7 @@ export const MissionStore = signalStore(
         setSelectedMission(idNumber: number) {
             const selectedMission = store.missions().find(mission => mission.id === idNumber);
             if (!selectedMission) {
-                console.log('toast an error', '[setSelectedMission] could not retrieve mission');
-                return;
+                throw new Error('[setSelectedMission] could not retrieve mission');
             }
             patchState(store, state => ({
                 ...state,
